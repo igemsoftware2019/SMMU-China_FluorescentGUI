@@ -12,7 +12,7 @@ Thanks for their contributions!
 //- Stand on the shoulders of giants.
 
 Briefly Instructions
-1. The dependency of the project is in the Dependency directory. Please add to the build library. macOS copy the Dynamic Library File to the lib directory of the Java installation root. Generally, the installation path of macOS is 
+1. The dependency of the project is in the Dependency DIRECTORY. Please add to the build library. macOS copy the Dynamic Library File to the lib directory of the Java installation root. Generally, the installation path of macOS is 
 
      Library/Java/JavaVirtualMachines/jdk-13.jdk/Contents/Home/lib
 
