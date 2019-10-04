@@ -14,11 +14,11 @@ Thanks for their contributions!
 Briefly Instructions
 1. The dependency of the project is in the Dependency directory. Please add to the build library. macOS copy the Dynamic Library File to the lib directory of the Java installation root. Generally, the installation path of macOS is 
 
-Library/Java/JavaVirtualMachines/jdk-13.jdk/Contents/Home/lib
+     Library/Java/JavaVirtualMachines/jdk-13.jdk/Contents/Home/lib
 
-Windows copy the .dll to the bin directory of the Java installation root. Generally, the installation path of Windows is
+   Windows copy the .dll to the bin directory of the Java installation root. Generally, the installation path of Windows is
 
-%ProgramFiles%\Java\jdk-13.jdk\bin
+     %ProgramFiles%\Java\jdk-13.jdk\bin
 
 2. The program is only for 64-bit operating system.
 
