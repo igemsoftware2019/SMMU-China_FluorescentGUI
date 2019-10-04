@@ -26,4 +26,4 @@ Windows copy the .dll to the bin directory of the Java installation root. Genera
 
 4. The Fluorescent-gui DIRECTORY is a GUI window of the program. It could make chart to display the standard curve and predicted concentration.
 
-5.The WuKong DIRECTORY is a packing launcher of the GUI program only for Windows Users! It could set up the environment of the program.
+5. The WuKong DIRECTORY is a packing launcher of the GUI program only for Windows Users! It could set up the environment of the program.
