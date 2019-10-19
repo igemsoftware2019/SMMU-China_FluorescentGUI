@@ -36,7 +36,7 @@ public class Process {
             List<MatOfPoint> points = new ArrayList<>();
             Mat dpoints = new Mat();
             Core.split(o_image, channel);
-            Mat o_image_c = channel.get(2);
+            Mat o_image_c = channel.get(mode - 1);
             Mat p_image_c = o_image_c.clone();
             Controller.controller(20, "Processing Image");
             Imgproc.threshold(o_image_c, p_image_c, 0.0, 255.0, Imgproc.THRESH_BINARY | Imgproc.THRESH_OTSU);
@@ -44,6 +44,8 @@ public class Process {
             Controller.controller(30, "Processing Image");
             //Remove the error value
             int maxareaIdx = 0;
+            int minareaIdx = 0;
+            int ratioareaIdx = 0;
             for (int i = 0; i < points.size(); i++) {
                 double tmparea = Math.abs(Imgproc.contourArea(points.get(i)));
                 if (tmparea > maxarea) {
@@ -55,6 +57,9 @@ public class Process {
                 }
                 if (tmparea < minarea) {
                     points.remove(i);
+                    minarea = tmparea;
+                    minareaIdx = i;
+                    System.out.println("The area " + minareaIdx + " has been removed [Exceed the minimum value set]");
                     continue;
                 }
                 Rect arect = Imgproc.boundingRect(points.get(i));
@@ -86,6 +91,8 @@ public class Process {
             double hsv_v = Math.max(Math.max(average[0], average[1]), average[2]) / 255;
             double quotient = corr_mean / hsv_v;
             double[] correction = new double[3];
+            System.out.println("The HSV channel is: " + hsv_v);
+            System.out.println("The quotient is: " + quotient);
             correction[0] = average[0] * quotient;
             correction[1] = average[1] * quotient;
             correction[2] = average[2] * quotient;

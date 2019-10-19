@@ -22,6 +22,7 @@ public class MainActivity extends JFrame {
     public Double processed;
     private Chart showchart;
     private Double zero = 12.342;
+    private Integer mode = 3;
 
     public static JFrame jFrame = new MainActivity("FluorescentGUI V-1.0");
     public static void main(String[] args) {
@@ -83,7 +84,7 @@ public class MainActivity extends JFrame {
                     process = new Process();
                     try {
                         processed = process.p_data(textField1.getText(), jFrame, 2000.0, 15000.0,
-                                0.0, 3, zero, 60.0);
+                                0.0, mode, zero, 60.0);
                     } catch (IOException ex) {
                         ex.printStackTrace();
                     }
